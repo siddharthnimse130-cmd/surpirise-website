@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise 💖</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            width: 85%;
+            max-width: 400px;
+            margin: auto;
+            margin-top: 120px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            font-size: 22px;
+        }
+
+        button {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        .yes {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .no {
+            background: #f44336;
+            color: white;
+            position: absolute;
+        }
+
+        #message {
+            display: none;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <!-- QUESTION -->
+    <div id="question">
+        <h2>Are you Bondhu? 😜</h2>
+
+        <button class="yes" onclick="showMessage()">Yes 💖</button>
+        <button class="no" id="noBtn">No 😏</button>
+    </div>
+
+    <!-- MESSAGE -->
+    <div id="message">
+        <h2>🎉 Happy Birthday!</h2>
+
+        <p>
+            Happy Birthday to the girl who talks non-stop but somehow I never get bored 😜<br><br>
+
+            I never believed in “instant connections” until I met you.<br><br>
+
+            You’re different… in the best way possible.<br>
+            And honestly, that’s the reason I enjoy every moment with you.<br><br>
+
+            Keep being your talkative, slightly immature, amazing self…<br><br>
+
+            Stay exactly the way you are ❤️
+        </p>
+
+        <h3>– From someone who enjoys every moment with you 💫</h3>
+    </div>
+
+</div>
+
+<script>
+    function showMessage() {
+        document.getElementById("question").style.display = "none";
+        document.getElementById("message").style.display = "block";
+    }
+
+    const noBtn = document.getElementById("noBtn");
+
+    function moveButton() {
+        const maxX = window.innerWidth - 100;
+        const maxY = window.innerHeight - 100;
+
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
+
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    }
+
+    // ONLY mobile touch movement
+    noBtn.addEventListener("touchstart", moveButton);
+</script>
+
+</body>
+</html>
